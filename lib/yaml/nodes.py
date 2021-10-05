@@ -26,6 +26,8 @@ class Node(object):
         if not isinstance(other, Node):
             return False
         return self.tag==other.tag and self.value==other.value and self.id==other.id
+    def __ne__(self, other):
+        return not self.__eq__(other)
 
 class ScalarNode(Node):
     id = 'scalar'
